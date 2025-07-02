@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 
 import path from 'path';
 import connectDB from './config/db.js';
+// Importing routes
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,6 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // MongoDB connection
 connectDB();
+
+app.use("/api/v1/auth", authRoutes);
 
 app.listen(PORT, () => { 
     console.log(`Server is running on port ${PORT}`);

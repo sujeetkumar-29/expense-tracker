@@ -7,9 +7,14 @@ import path from 'path';
 import connectDB from './config/db.js';
 // Importing routes
 import authRoutes from './routes/authRoutes.js';
+import incomeRoutes from './routes/incomeRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Middleware
 app.use(cors(
@@ -27,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/income", incomeRoutes);
 
 // Serve static files from the 'uploads' directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

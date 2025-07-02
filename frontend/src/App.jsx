@@ -14,7 +14,7 @@ import Expense from './pages/Dashboard/Expense'
 
 const App = () => {
   return (
-    <div className='text-3xl'>
+    <div className="">
       <Router>
         <Routes>
           <Route path="/" element={<Root />} />

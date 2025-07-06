@@ -7,11 +7,12 @@ import {
 } from 'react-router-dom'
 import Login from './pages/Auth/Login'
 import SignUp from './pages/Auth/SignUp'
-import Home from './pages/Dashboard/Home'
+import Dashboard from './pages/Dashboard/Dashboard'
 import Income from './pages/Dashboard/Income'
 import Expense from './pages/Dashboard/Expense'
 import UserProvider from './context/userContext'
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
+import ExpenseTrackerHome from './pages/Dashboard/Home'
 
 
 const App = () => {
@@ -23,7 +24,7 @@ const App = () => {
             <Route path="/" element={<Root />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/signup" exact element={<SignUp />} />
-            <Route path="/dashboard" exact element={<Home />} />
+            <Route path="/dashboard" exact element={<Dashboard />} />
             <Route path="/income" exact element={<Income />} />
             <Route path="/expense" exact element={<Expense />} />
             {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
@@ -49,5 +50,10 @@ const Root = () => {
   const isAuthenticated = !!localStorage.getItem('token');
 
   // Redirect to Dashboard if authenticated , otherwise redirect to Login
-  return isAuthenticated ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />;
+  return isAuthenticated ? (
+    <Navigate to="/dashboard" replace />
+  ) :
+    (<Navigate to="/login" replace />
+
+    )
 };

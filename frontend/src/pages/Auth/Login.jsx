@@ -76,7 +76,7 @@ const Login = () => {
           {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
           <button
             type="submit"
-            className=" btn-primary "
+            className="btn-primary"
           >
             Login
           </button>

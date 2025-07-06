@@ -37,10 +37,10 @@ const SignUp = () => {
       setError("Please enter the password");
       return;
     }
-    if (!profilePic) {
-      setError("Please upload a profile picture");
-      return;
-    }
+    // if (!profilePic) {
+    //   setError("Please upload a profile picture");
+    //   return;
+    // }
     setError("");
 
     // Sign Up API call logic goes here

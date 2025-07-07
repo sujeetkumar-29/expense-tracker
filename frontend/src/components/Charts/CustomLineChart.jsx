@@ -16,7 +16,7 @@ const CustomLineChart = ({ data }) => {
         }
         return null;
     }
-    return <div className="bg-white">
+    return <div className="bg-white dark:bg-gray-900">
         <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={data}>
                 <defs>

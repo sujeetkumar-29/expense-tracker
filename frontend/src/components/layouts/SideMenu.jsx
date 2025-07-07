@@ -52,7 +52,7 @@ const SideMenu = ({ activeMenu }) => {
                 return (
                     <button
                         key={`menu_${index}`}
-                        className={`flex items-center gap-4 text-[15px] py-3 px-6 rounded-lg mb-3 transition-colors
+                        className={`flex items-center gap-4 text-[15px] py-3 px-6 rounded-lg mb-3 transition-colors cursor-pointer
                         ${
                             isActive
                                 ? 'text-white bg-primary'

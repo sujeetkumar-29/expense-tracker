@@ -9,16 +9,24 @@ const SideMenu = ({ activeMenu }) => {
     const navigate = useNavigate();
     const handleClick = (route) => {
         if (route === "logout") {
-            handelLogout();
+            handleLogout();
             return;
         }
         navigate(route);
     }
-    const handelLogout = () => {
-        localStorage.clear();
-        clearUser()
+    const handleLogout = () => {
+        // Remove specific items from localStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userInfo');
+
+        // Clear user state (assuming this is a state management function)
+        clearUser();
+
+        // Navigate to login page
         navigate("/login");
-    }
+    };
 
     return (
         <div className="w-64 h-[calc(100vh-61px)] bg-white border-r border-gray-200/50 p-5 sticky top-[61px] z-20">
@@ -28,11 +36,11 @@ const SideMenu = ({ activeMenu }) => {
                         alt="Profile Image"
                         className="w-20 h-20 bg-slate-400 rounded-full"
                     />) : <CharAvtar
-                            fullName={user?.fullName}
-                            width="w-20"
-                            height="h-20"
-                            style="text-xl"
-                            />
+                    fullName={user?.fullName}
+                    width="w-20"
+                    height="h-20"
+                    style="text-xl"
+                />
                 }
                 <h5 className="text-gray-950 font-medium leading-6 "> {user?.fullName || ""}</h5>
             </div>
@@ -49,7 +57,7 @@ const SideMenu = ({ activeMenu }) => {
                 </button>
             ))}
         </div>
-    )    
+    )
 }
 
 export default SideMenu

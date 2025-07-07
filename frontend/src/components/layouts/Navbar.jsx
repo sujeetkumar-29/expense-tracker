@@ -18,12 +18,12 @@ const Navbar = ({ activeMenu }) => {
                 dark:bg-gradient-to-r dark:from-purple-900/20 dark:via-pink-900/20 dark:to-indigo-900/20" />
             
             {/* Subtle glow particles */}
-            <div className="absolute top-2 right-20 w-1 h-1 rounded-full animate-ping 
+            {/* <div className="absolute top-2 right-20 w-1 h-1 rounded-full animate-ping 
                 bg-purple-300 shadow-[0_0_8px_rgba(147,51,234,0.6)]
                 dark:bg-purple-400 dark:shadow-[0_0_10px_rgba(147,51,234,0.8)]" />
             <div className="absolute bottom-2 left-32 w-1 h-1 rounded-full animate-ping delay-500 
                 bg-pink-300 shadow-[0_0_8px_rgba(244,114,182,0.6)]
-                dark:bg-pink-400 dark:shadow-[0_0_10px_rgba(244,114,182,0.8)]" />
+                dark:bg-pink-400 dark:shadow-[0_0_10px_rgba(244,114,182,0.8)]" /> */}
             
             <div className="flex items-center gap-5 relative z-10 w-full">
                 <button 

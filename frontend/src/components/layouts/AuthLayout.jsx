@@ -1,4 +1,3 @@
-// components/AuthLayout.js
 import React from 'react'
 import CARD_2 from '../../assets/images/card2.png'
 import { LuTrendingUpDown } from 'react-icons/lu';
@@ -22,9 +21,9 @@ const AuthLayout = ({ children }) => {
                 dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
                 
                 {/* Space Glow Effects */}
-                <div className="absolute inset-0 overflow-hidden">
+                {/* <div className="absolute inset-0 overflow-hidden"> */}
                     {/* Animated gradient orbs with glow */}
-                    <div className="w-48 h-48 rounded-full absolute -top-7 -left-5 animate-pulse transition-all duration-1000 
+                    {/* <div className="w-48 h-48 rounded-full absolute -top-7 -left-5 animate-pulse transition-all duration-1000 
                         bg-gradient-to-r from-purple-400 to-pink-400 shadow-[0_0_60px_rgba(147,51,234,0.4)]
                         dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-600 dark:shadow-[0_0_100px_rgba(147,51,234,0.7)]" />
                     
@@ -34,10 +33,10 @@ const AuthLayout = ({ children }) => {
                     
                     <div className="w-48 h-48 rounded-full absolute -bottom-7 -left-5 animate-pulse transition-all duration-1000 delay-500 
                         bg-gradient-to-r from-violet-400 to-indigo-400 shadow-[0_0_60px_rgba(124,58,237,0.4)]
-                        dark:bg-gradient-to-r dark:from-violet-600 dark:to-indigo-600 dark:shadow-[0_0_100px_rgba(124,58,237,0.7)]" />
+                        dark:bg-gradient-to-r dark:from-violet-600 dark:to-indigo-600 dark:shadow-[0_0_100px_rgba(124,58,237,0.7)]" /> */}
                     
                     {/* Additional space glow particles */}
-                    <div className="w-4 h-4 rounded-full absolute top-20 right-20 animate-ping 
+                    {/* <div className="w-4 h-4 rounded-full absolute top-20 right-20 animate-ping 
                         bg-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.6)]
                         dark:bg-cyan-400 dark:shadow-[0_0_20px_rgba(34,211,238,0.8)]" />
                     <div className="w-3 h-3 rounded-full absolute top-[60%] right-[20%] animate-ping delay-1000 
@@ -46,13 +45,13 @@ const AuthLayout = ({ children }) => {
                     <div className="w-2 h-2 rounded-full absolute bottom-[30%] right-[30%] animate-ping delay-700 
                         bg-yellow-300 shadow-[0_0_8px_rgba(250,204,21,0.6)]
                         dark:bg-yellow-400 dark:shadow-[0_0_12px_rgba(250,204,21,0.8)]" />
-                </div>
+                </div> */}
 
                 <div className="grid grid-cols-1 z-20 relative">
                     <StatsInfoCard
                         icon={<LuTrendingUpDown />}
                         label="Track your Income & Expenses"
-                        value="430,000"
+                        value="4,30,000"
                     />
                 </div>
 
@@ -82,7 +81,7 @@ const StatsInfoCard = ({ icon, label, value }) => {
             </div>
             <div>
                 <h6 className="text-xs mb-1 text-gray-500 dark:text-gray-300">{label}</h6>
-                <span className="text-[20px] font-semibold text-gray-900 dark:text-white">${value}</span>
+                <span className="text-[20px] font-semibold text-gray-900 dark:text-white">₹{value}</span>
             </div>
         </div>
     );

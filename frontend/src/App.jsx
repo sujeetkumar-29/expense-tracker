@@ -13,12 +13,12 @@ import Expense from './pages/Dashboard/Expense'
 import UserProvider from './context/userContext'
 import { Toaster } from 'react-hot-toast'
 import ExpenseTrackerHome from './pages/Dashboard/Home'
-import { DarkModeProvider } from './context/DarkModeContext'
+import { ThemeProvider } from './context/themeContext'
 
 
 const App = () => {
   return (
-    <DarkModeProvider>
+    <ThemeProvider>
     <UserProvider>
       <div className="">
         <Router>
@@ -42,7 +42,7 @@ const App = () => {
         }}
       />
     </UserProvider>
-    </DarkModeProvider>
+    </ThemeProvider>
   )
 }
 

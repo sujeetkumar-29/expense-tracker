@@ -14,15 +14,16 @@ import {
 const CustomBarChart = ({ data }) => {
 
     // Function to get alternative color
-    const getBarColor = (index) => (index % 2 === 0 ? "#875cf5" : "#cfbefb");
+    const getBarColor = (index) => (index % 2 === 0 ? "#6f3ff5" : "#e0d7ff");
 
     const CustomTooltip = ({ active, payload }) => {
 
         if (active && payload && payload.length) {
             return (
-                <div className="bg-white shadow-md rounded-lg p-2 border border-gray-300 ">
-                    <p className="text-xs font-semibold text-purple-800 mb-1">{payload[0].payload.category}</p>
-                    <p className="text-sm text-gray-600">Amount:<span className="text-sm font-medium text-gray-900">₹{payload[0].payload.amount}</span></p>
+                <div className="bg-white dark:bg-gray-900 shadow-md rounded-lg p-2 border border-gray-300 ">
+                    <p className="text-xs font-semibold text-purple-800 dark:text-purple-900 mb-1">{payload[0].payload.source}</p>
+                    <p className="text-xs font-semibold text-purple-800 dark:text-purple-900 mb-1">{payload[0].payload.category}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Amount:<span className="text-sm font-medium text-gray-900 dark:text-gray-100">₹{payload[0].payload.amount}</span></p>
 
                 </div>
             )
@@ -31,7 +32,7 @@ const CustomBarChart = ({ data }) => {
     }
 
     return (
-        <div className="bg-white mt-6">
+        <div className="bg-white dark:bg-gray-900 mt-6">
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={data}>
                     <CartesianGrid stroke="none" />

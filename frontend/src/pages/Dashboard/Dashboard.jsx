@@ -49,7 +49,7 @@ const Dashboard = () => {
 
   return (
     <DashboardLayout activeMenu="Dashboard">
-      <div className="my-5 mx-auto">
+      <div className="my-5 mx-auto  bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
           <InfoCard
             icon={<IoMdCard />}

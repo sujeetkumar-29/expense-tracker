@@ -14,6 +14,7 @@ import UserProvider from './context/userContext'
 import { Toaster } from 'react-hot-toast'
 import ExpenseTrackerHome from './pages/Dashboard/Home'
 import { ThemeProvider } from './context/themeContext'
+import AllTransaction from './pages/Dashboard/AllTransaction'
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/dashboard" exact element={<Dashboard />} />
             <Route path="/income" exact element={<Income />} />
             <Route path="/expense" exact element={<Expense />} />
+            <Route path="/all-transaction" exact element={<AllTransaction />} />
             {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           </Routes>
         </Router>

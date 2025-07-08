@@ -4,6 +4,7 @@ import {
     LuWalletMinimal,
     LuLogOut,
 } from "react-icons/lu";
+import { GrTransaction } from "react-icons/gr";
 
 export const SIDE_MENU_DATA = [
     {
@@ -23,6 +24,12 @@ export const SIDE_MENU_DATA = [
         label: "Expense",
         icon: LuHandCoins,
         path: "/expense",
+    },
+    {
+        id: "04",
+        label: "All Transaction",
+        icon: GrTransaction,
+        path: "/all-transaction",
     },
     {
         id: "06",

@@ -93,7 +93,7 @@ const Expense = () => {
   const handleDownloadExpenseDetails = async () => {
     try {
       const response = await axiosInstance.get(
-        API_PATHS.EXPENSE.DOMILOAD_EXPENSE,
+        API_PATHS.EXPENSE.DOWNLOAD_EXPENSE,
         {
           responseType: "blob",
 

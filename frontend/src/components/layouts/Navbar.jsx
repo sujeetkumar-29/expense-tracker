@@ -1,26 +1,38 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"
 import SideMenu from './SideMenu'
 import DarkModeToggle from "../../components/DarkModeToggle"
 
 const Navbar = ({ activeMenu }) => {
     const [openSideMenu, setOpenSideMenu] = useState(false)
+    const ignoreClick = useRef(false)
 
-    // Optional: Close SideMenu when clicking outside
     useEffect(() => {
         const handleOutsideClick = (e) => {
+            // Skip the first click that toggled the menu
+            if (ignoreClick.current) {
+                ignoreClick.current = false
+                return
+            }
+
             if (!e.target.closest('.side-menu') && !e.target.closest('.menu-button')) {
-                setOpenSideMenu(false);
+                setOpenSideMenu(false)
             }
         }
+
         if (openSideMenu) {
-            document.addEventListener("click", handleOutsideClick);
-        } else {
-            document.removeEventListener("click", handleOutsideClick);
+            document.addEventListener("click", handleOutsideClick)
         }
 
-        return () => document.removeEventListener("click", handleOutsideClick);
-    }, [openSideMenu]);
+        return () => {
+            document.removeEventListener("click", handleOutsideClick)
+        }
+    }, [openSideMenu])
+
+    const handleMenuToggle = () => {
+        ignoreClick.current = true
+        setOpenSideMenu(prev => !prev)
+    }
 
     return (
         <div className="flex gap-5 relative py-4 px-7 sticky top-0 z-30 transition-all duration-300 border-b 
@@ -37,9 +49,9 @@ const Navbar = ({ activeMenu }) => {
                     className="menu-button block lg:hidden p-2 rounded-lg transition-all duration-200 
                         text-black hover:bg-gray-100/60 hover:shadow-[0_0_10px_rgba(147,51,234,0.2)]
                         dark:text-white dark:hover:bg-gray-800/60 dark:hover:shadow-[0_0_15px_rgba(147,51,234,0.4)]"
-                    onClick={() => setOpenSideMenu(!openSideMenu)}
+                    onClick={handleMenuToggle}
                 >
-                    {openSideMenu ? <HiOutlineX className="text-2xl" /> : <HiOutlineMenu className="text-2xl" />}
+                    {openSideMenu ? <HiOutlineX className="text-2xl cursor-pointer" /> : <HiOutlineMenu className="text-2xl cursor-pointer" />}
                 </button>
 
                 <h2 className="text-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">

@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="120" rx="20" fill="#f9fafb"></rect>
+
+  <!-- Wallet -->
+  <rect x="20" y="50" width="80" height="40" rx="8" fill="#4f46e5"></rect>
+  <rect x="30" y="58" width="60" height="24" rx="5" fill="#6366f1"></rect>
+
+  <!-- Rupee Sign -->
+  <circle cx="90" cy="30" r="15" fill="#10b981"></circle>
+  <text x="90" y="36" text-anchor="middle" font-size="16" font-weight="bold" fill="white">₹</text>
+
+  <!-- Bar Chart -->
+  <rect x="25" y="35" width="6" height="15" rx="2" fill="#22c55e"></rect>
+  <rect x="35" y="30" width="6" height="20" rx="2" fill="#22c55e"></rect>
+  <rect x="45" y="40" width="6" height="10" rx="2" fill="#22c55e"></rect>
+</svg>

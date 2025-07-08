@@ -8,6 +8,7 @@ const AuthLayout = ({ children }) => {
         <div className="flex">
             <div className="w-screen h-screen md:w-[60vw] px-12 pt-8 pb-12 bg-white dark:bg-gray-900 transition-colors duration-300">
                 <div className="flex justify-between items-center mb-6">
+                <img src="./public/expenselogo.svg" className="h-10 dark:bg-black" alt="logo" />
                     <h2 className="text-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                         Expense Tracker
                     </h2>

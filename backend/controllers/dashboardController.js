@@ -46,13 +46,13 @@ export const getDashboardData = async (req, res) => {
             (sum, transaction) => sum + transaction.amount, 0
         );
 
-        // Fetch last 5  transactions (income+ expense)
+        // Fetch last  transactions (income+ expense)
         const lastTransactions = [
-            ...(await Income.find({ userId }).sort({ date: -1 }).limit(5)).map(txn => ({
+            ...(await Income.find({ userId }).sort({ date: -1 }).limit()).map(txn => ({
                 ...txn.toObject(),
                 type: "income",
             })),
-            ...(await Expense.find({ userId }).sort({ date: -1 }).limit(5)).map(txn => ({
+            ...(await Expense.find({ userId }).sort({ date: -1 }).limit()).map(txn => ({
                 ...txn.toObject(),
                 type: "expense",
             })),

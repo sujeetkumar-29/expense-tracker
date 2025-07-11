@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDarkMode } from '../context/themeContext'
+import { useDarkMode } from '../context/ThemeContext.jsx'
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 

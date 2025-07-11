@@ -13,7 +13,7 @@ import Expense from './pages/Dashboard/Expense'
 import UserProvider from './context/userContext'
 import { Toaster } from 'react-hot-toast'
 import ExpenseTrackerHome from './pages/Dashboard/Home'
-import { ThemeProvider } from './context/themeContext'
+import { ThemeProvider } from './context/ThemeContext'
 import AllTransaction from './pages/Dashboard/AllTransaction'
 
 

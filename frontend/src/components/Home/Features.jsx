@@ -138,13 +138,13 @@ const Features = () => {
             Try It Now - Demo Credentials
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Experience ExpenseMate with our demo account. No signup required!
+            Experience Expense Tracker with our demo account. No signup required!
           </p>
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md mx-auto shadow-lg">
             <div className="text-left space-y-2">
               <div>
                 <span className="font-semibold text-gray-700 dark:text-gray-300">Email:</span>
-                <span className="ml-2 text-emerald-600 dark:text-emerald-400 font-mono">demo@expensemate.com</span>
+                <span className="ml-2 text-emerald-600 dark:text-emerald-400 font-mono">demo@expensetracker.com</span>
               </div>
               <div>
                 <span className="font-semibold text-gray-700 dark:text-gray-300">Password:</span>

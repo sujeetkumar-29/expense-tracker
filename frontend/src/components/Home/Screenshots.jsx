@@ -34,14 +34,14 @@ const Screenshots = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            See ExpenseMate in
+            See Expense Tracker in
             <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent block">
               Action
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Take a tour through our intuitive interface and discover how easy it is to 
-            manage your finances with ExpenseMate's powerful features.
+            manage your finances with Expense Tracker's powerful features.
           </p>
         </div>
 
@@ -98,11 +98,11 @@ const Screenshots = () => {
               Ready to Transform Your Financial Life?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Join thousands of users who have already taken control of their finances with ExpenseMate.
+              Join thousands of users who have already taken control of their finances with Expense Tracker.
             </p>
             <button
               className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-              aria-label="Start your financial journey with ExpenseMate"
+              aria-label="Start your financial journey with Expense Tracker"
             >
               Start Your Financial Journey
             </button>

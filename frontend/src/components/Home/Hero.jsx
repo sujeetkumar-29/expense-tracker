@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowRight, FaPlay, FaStar, FaUsers, FaChartLine } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -37,10 +38,12 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+             <Link to="/signup" >
               <button className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Get Started Free
                 <FaArrowRight className="inline ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
+             </Link>
               <button className="group px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold rounded-xl border-2 border-gray-300 dark:border-gray-600 hover:border-emerald-500 dark:hover:border-emerald-400 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <FaPlay className="inline mr-2 h-5 w-5" />
                 Watch Demo

@@ -9,8 +9,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="p-2 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg">
-                <FaDollarSign className="h-6 w-6 text-white" />
+              <div className="">
+                <img src="/expenselogo.svg" className="h-10 dark:bg-black" alt="logo" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
                 Expense Tracker
@@ -71,7 +71,7 @@ const Footer = () => {
             <p className="text-gray-600 dark:text-gray-300 mb-6">
               Get the latest updates and financial tips delivered to your inbox.
             </p>
-            <div className="flex gap-3">
+            <div className="">
               <input
                 type="email"
                 placeholder="Enter your email"

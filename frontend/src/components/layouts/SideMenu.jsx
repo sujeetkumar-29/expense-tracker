@@ -22,7 +22,7 @@ const SideMenu = ({ activeMenu }) => {
         localStorage.removeItem('authToken');
         localStorage.removeItem('userInfo');
         clearUser();
-        navigate("/login");
+        navigate("/");
     };
 
     return (

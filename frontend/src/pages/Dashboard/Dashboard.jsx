@@ -61,7 +61,7 @@ const Dashboard = () => {
             icon={<LuWalletMinimal />}
             label="Total Income "
             value={addThousandsSeparator(dashboardData?.totalIncome || 0)}
-            color="bg-orange-500"
+            color="bg-blue-500"
           />
           <InfoCard
             icon={<LuHandCoins />}

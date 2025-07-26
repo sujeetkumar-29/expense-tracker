@@ -54,7 +54,7 @@ const Navbar = ({ activeMenu }) => {
                     {openSideMenu ? <HiOutlineX className="text-2xl cursor-pointer" /> : <HiOutlineMenu className="text-2xl cursor-pointer" />}
                 </button>
                 <img src="/expenselogo.svg" className="h-10 dark:bg-black" alt="logo" />
-                <h2 className="text-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
                     Expense Tracker
                 </h2>
 

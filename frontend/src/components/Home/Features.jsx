@@ -56,12 +56,12 @@ const Features = () => {
       description: "Combined view of income and expenses. Search, filter, and manage all transactions easily in one comprehensive interface.",
       color: "green"
     },
-    {
-      icon: FaFileImage,
-      title: "File Upload Support",
-      description: "Upload images or documents for transactions. Keep receipts organized and accessible with advanced file management.",
-      color: "orange"
-    },
+    // {
+    //   icon: FaFileImage,
+    //   title: "File Upload Support",
+    //   description: "Upload images or documents for transactions. Keep receipts organized and accessible with advanced file management.",
+    //   color: "orange"
+    // },
     {
       icon: FaFileDownload,
       title: "Data Export",

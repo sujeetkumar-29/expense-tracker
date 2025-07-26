@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom'
+import Home from './pages/Dashboard/Home'
 import Login from './pages/Auth/Login'
 import SignUp from './pages/Auth/SignUp'
 import Dashboard from './pages/Dashboard/Dashboard'
@@ -12,7 +13,6 @@ import Income from './pages/Dashboard/Income'
 import Expense from './pages/Dashboard/Expense'
 import UserProvider from './context/userContext'
 import { Toaster } from 'react-hot-toast'
-import ExpenseTrackerHome from './pages/Dashboard/Home'
 import { ThemeProvider } from './context/ThemeContext'
 import AllTransaction from './pages/Dashboard/AllTransaction'
 
@@ -24,7 +24,7 @@ const App = () => {
       <div className="">
         <Router>
           <Routes>
-            <Route path="/" element={<Root />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/signup" exact element={<SignUp />} />
             <Route path="/dashboard" exact element={<Dashboard />} />
@@ -50,15 +50,15 @@ const App = () => {
 
 export default App;
 
-const Root = () => {
-  // check if user is authenticated or token is present
-  const isAuthenticated = !!localStorage.getItem('token');
+// const Root = () => {
+//   // check if user is authenticated or token is present
+//   const isAuthenticated = !!localStorage.getItem('token');
 
-  // Redirect to Dashboard if authenticated , otherwise redirect to Login
-  return isAuthenticated ? (
-    <Navigate to="/dashboard" replace />
-  ) :
-    (<Navigate to="/login" replace />
+//   // Redirect to Dashboard if authenticated , otherwise redirect to Login
+//   return isAuthenticated ? (
+//     <Navigate to="/dashboard" replace />
+//   ) :
+//     (<Navigate to="/login" replace />
 
-    )
-};
+//     )
+// };

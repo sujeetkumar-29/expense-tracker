@@ -108,6 +108,8 @@ const Expense = () => {
       link.click()
       link.parentNode.removeChild(link)
       window.URL.revokeObjectURL(url)
+      toast.success("Expense downloaded successfully")
+
     }
     catch (error) {
       console.error("Error downloading expense details:", error)

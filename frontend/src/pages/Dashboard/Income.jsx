@@ -109,6 +109,7 @@ const Income = () => {
       link.click()
       link.parentNode.removeChild(link)
       window.URL.revokeObjectURL(url)
+      toast.success("Income downloaded successfully")
     }
     catch (error) {
       console.error("Error downloading income details:", error)

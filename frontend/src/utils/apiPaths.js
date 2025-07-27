@@ -9,6 +9,7 @@ export const API_PATHS = {
     },
     DASHBOARD: {
         GET_DATA: "/api/v1/dashboard",
+        DOWNLOAD_ALL_TRANSACTIONS: '/api/v1/dashboard/download-all-transactions',
     },
     INCOME: {
         ADD_INCOME: "/api/v1/income/add",

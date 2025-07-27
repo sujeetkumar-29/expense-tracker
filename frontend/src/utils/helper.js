@@ -54,4 +54,53 @@ export const prepareExpenseLineChartData = (data = []) => {
   return chartData;
 }
 
+// Add this function to your utils/helper.js file
+
+export const prepareTransactionChartData = (transactions) => {
+    if (!transactions || !Array.isArray(transactions)) {
+        return [];
+    }
+
+    // Group transactions by month and type
+    const monthlyData = {};
+    
+    transactions.forEach(transaction => {
+        const date = new Date(transaction.date);
+        const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+        const monthName = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        
+        if (!monthlyData[monthKey]) {
+            monthlyData[monthKey] = {
+                month: monthName,
+                income: 0,
+                expense: 0,
+                netAmount: 0,
+                transactionCount: 0
+            };
+        }
+        
+        const amount = parseFloat(transaction.amount) || 0;
+        monthlyData[monthKey].transactionCount += 1;
+        
+        if (transaction.type === 'income') {
+            monthlyData[monthKey].income += amount;
+        } else if (transaction.type === 'expense') {
+            monthlyData[monthKey].expense += amount;
+        }
+        
+        // Calculate net amount (income - expense)
+        monthlyData[monthKey].netAmount = monthlyData[monthKey].income - monthlyData[monthKey].expense;
+    });
+    
+    // Convert to array and sort by date
+    const sortedData = Object.keys(monthlyData)
+        .sort()
+        .map(key => monthlyData[key])
+        .slice(-12); // Show last 12 months
+    
+    return sortedData;
+};
+
+// Keep the old function for backward compatibility if needed elsewhere
+export const prepareTransactionBarChartData = prepareTransactionChartData;
 

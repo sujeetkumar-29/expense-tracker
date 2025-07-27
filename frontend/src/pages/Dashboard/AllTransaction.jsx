@@ -7,6 +7,7 @@ import toast from 'react-hot-toast'
 import DeleteAlert from '../../components/DeleteAlert'
 import { useUserAuth } from '../../hooks/useUserAuth'
 import TransactionList from '../../components/AllTransaction/TransactionList'
+import TransactionOverview from '../../components/AllTransaction/TransactionOverview'
 
 const AllTransaction = () => {
     useUserAuth()
@@ -153,6 +154,19 @@ const AllTransaction = () => {
         <DashboardLayout activeMenu="All Transaction">
             <div className="my-5 mx-auto">
                 <div className="grid grid-cols-1 gap-6">
+                    {/* Transaction Overview Section */}
+                    <div className="">
+                        <TransactionOverview
+                            transactions={transactionData?.recentTransactions}
+                            loading={loading}
+                            onRefresh={handleRefresh}
+                            onDownloadAll={handleDownloadAllTransactions}
+                            onDownloadIncome={handleDownloadIncomeDetails}
+                            onDownloadExpense={handleDownloadExpenseDetails}
+                        />
+                    </div>
+
+                    {/* Transaction List Section */}
                     <TransactionList
                         transactions={transactionData?.recentTransactions}
                         loading={loading}

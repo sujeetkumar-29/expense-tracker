@@ -1,5 +1,6 @@
 import React from 'react'
 import CARD_2 from '../../assets/images/card2.png'
+import CARD_3 from '../../assets/images/card3.png'
 import { LuTrendingUpDown } from 'react-icons/lu';
 import DarkModeToggle from "../../components/DarkModeToggle"
 import { Link } from 'react-router-dom';
@@ -31,6 +32,13 @@ const AuthLayout = ({ children }) => {
                     />
                 </div>
 
+                <img
+                    src={CARD_3}
+                    className="w-64 lg:w-[90%] absolute  transition-all duration-500 
+                        shadow-lg shadow-blue-400/15
+                        dark:shadow-2xl dark:shadow-emerald-500/30 dark:drop-shadow-[0_0_30px_rgba(16,185,129,0.5)]"
+                    alt="Card illustration"
+                />
                 <img
                     src={CARD_2}
                     className="w-64 lg:w-[90%] absolute bottom-10 transition-all duration-500 

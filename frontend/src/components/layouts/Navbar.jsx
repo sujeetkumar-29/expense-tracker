@@ -35,42 +35,85 @@ const Navbar = ({ activeMenu }) => {
     }
 
     return (
-        <div className="flex gap-5 relative py-4 px-7 sticky top-0 z-30 transition-all duration-300 border-b 
-            bg-white/80 border-gray-200/50 backdrop-blur-md shadow-[0_0_15px_rgba(147,51,234,0.1)]
-            dark:bg-gray-900 dark:border-gray-700 dark:shadow-[0_0_20px_rgba(147,51,234,0.3)]">
+        <>
+            {/* Fixed Navbar */}
+            <nav className="h-16 flex items-center justify-between px-4 lg:px-6 relative transition-all duration-300 border-b 
+                bg-white/80 border-gray-200/50 backdrop-blur-md shadow-[0_0_15px_rgba(147,51,234,0.1)]
+                dark:bg-gray-900 dark:border-gray-700 dark:shadow-[0_0_20px_rgba(147,51,234,0.3)]">
 
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 opacity-10 transition-opacity duration-300 
-                bg-gradient-to-r from-purple-100/30 via-pink-100/30 to-indigo-100/30
-                dark:from-purple-900/20 dark:via-pink-900/20 dark:to-indigo-900/20" />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 opacity-10 transition-opacity duration-300 
+                    bg-gradient-to-r from-purple-100/30 via-pink-100/30 to-indigo-100/30
+                    dark:from-purple-900/20 dark:via-pink-900/20 dark:to-indigo-900/20" />
 
-            <div className="flex items-center gap-5 relative z-10 w-full">
-                <button
-                    className="menu-button block lg:hidden p-2 rounded-lg transition-all duration-200 
-                        text-black hover:bg-gray-100/60 hover:shadow-[0_0_10px_rgba(147,51,234,0.2)]
-                        dark:text-white dark:hover:bg-gray-800/60 dark:hover:shadow-[0_0_15px_rgba(147,51,234,0.4)]"
-                    onClick={handleMenuToggle}
-                >
-                    {openSideMenu ? <HiOutlineX className="text-2xl cursor-pointer" /> : <HiOutlineMenu className="text-2xl cursor-pointer" />}
-                </button>
-                <img src="/expenselogo.svg" className="h-10 dark:bg-black" alt="logo" />
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                    Expense Tracker
-                </h2>
+                {/* Left side - Menu toggle and Logo */}
+                <div className="flex items-center gap-2 sm:gap-4 relative z-10">
+                    {/* Mobile menu toggle */}
+                    <button
+                        className="menu-button xl:hidden p-2 rounded-lg transition-all duration-200 
+                            text-black hover:bg-gray-100/60 hover:shadow-[0_0_10px_rgba(147,51,234,0.2)]
+                            dark:text-white dark:hover:bg-gray-800/60 dark:hover:shadow-[0_0_15px_rgba(147,51,234,0.4)]"
+                        onClick={handleMenuToggle}
+                    >
+                        {openSideMenu ? (
+                            <HiOutlineX className="text-xl sm:text-2xl" />
+                        ) : (
+                            <HiOutlineMenu className="text-xl sm:text-2xl" />
+                        )}
+                    </button>
 
-                <div className="ml-auto">
+                    {/* Logo */}
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <img src="/expenselogo.svg" className="h-6 sm:h-8 dark:bg-black rounded" alt="logo" />
+                        <h2 className="text-base sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent truncate">
+                            <span className="hidden sm:inline">Expense Tracker</span>
+                            <span className="sm:hidden">ExpTracker</span>
+                        </h2>
+                    </div>
+                </div>
+
+                {/* Right side - Dark mode toggle */}
+                <div className="relative z-10">
                     <DarkModeToggle />
                 </div>
-            </div>
+            </nav>
 
+            {/* Mobile Side Menu Overlay */}
             {openSideMenu && (
-                <div className="side-menu fixed top-[73px] left-0 w-64 h-[calc(100vh-73px)] transition-all duration-300 z-40 
-                    bg-white/95 shadow-[0_0_20px_rgba(147,51,234,0.2)] backdrop-blur-md
-                    dark:bg-gray-900/95 dark:shadow-[0_0_30px_rgba(147,51,234,0.4)]">
-                    <SideMenu activeMenu={activeMenu} />
-                </div>
+                <>
+                    {/* Backdrop */}
+                    <div 
+                        className="lg:hidden fixed inset-0 bg-black/60 z-40 transition-opacity duration-300 backdrop-blur-sm"
+                        onClick={() => setOpenSideMenu(false)}
+                    />
+                    
+                    {/* Mobile Side Menu */}
+                    <div className={`
+                        side-menu lg:hidden fixed top-0 left-0 h-full z-50 transform transition-all duration-300 ease-in-out
+                        ${openSideMenu ? 'translate-x-0' : '-translate-x-full'}
+                        w-72 sm:w-80 bg-white/98 shadow-2xl backdrop-blur-lg
+                        dark:bg-gray-900/98 dark:shadow-emerald-500/20
+                    `}>
+                        {/* Mobile menu content - no separate header needed */}
+                        <div className="h-full overflow-y-auto scrollbar-thin mobile-hide-scrollbar">
+                            <SideMenu 
+                                activeMenu={activeMenu} 
+                                isMobile={true} 
+                                onItemClick={() => setOpenSideMenu(false)} 
+                            />
+                        </div>
+                        
+                        {/* Close button - floating */}
+                        <button
+                            onClick={() => setOpenSideMenu(false)}
+                            className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-lg z-10"
+                        >
+                            <HiOutlineX className="text-lg text-gray-600 dark:text-gray-300" />
+                        </button>
+                    </div>
+                </>
             )}
-        </div>
+        </>
     )
 }
 

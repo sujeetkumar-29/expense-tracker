@@ -21,7 +21,7 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(cors(
     {
-        origin: process.env.CLIENT_URL || "*", // Allow all origins for development
+        origin: process.env.CLIENT_URL || "*", 
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         credentials: true,
@@ -42,6 +42,10 @@ app.use("/api/v1/dashboard", dashboardRoutes);
 
 // Serve static files from the 'uploads' directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
 
 app.listen(PORT, () => { 
     console.log(`Server is running on port ${PORT}`);

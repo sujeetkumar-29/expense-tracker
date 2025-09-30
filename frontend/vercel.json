@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/v1/(.*)",      
+      "destination": "https://expense-tracker-backend-ly69.onrender.com/api/v1/$1"
+    },
+    {
+      "source": "/(.*)",           
+      "destination": "/"
+    }
+  ]
+}

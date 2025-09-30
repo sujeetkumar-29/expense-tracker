@@ -1,9 +1,9 @@
-/* Import Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
-/* Dark mode variant + theme (Tailwind v4 syntax) */
-@custom-variant dark &:where(.dark, .dark *);
+
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --font-display: 'Poppins', sans-serif;
   --breakpoint-3xl: 1920px;
@@ -14,18 +14,6 @@
   color-scheme: light dark;
 }
 
-/* Base Layer */
-@layer base {
-  html {
-    font-family: var(--font-display);
-  }
-
-  body {
-    background-color: #F3F4F6;
-    color: #111827;
-    overflow-x: hidden;
-  }
-}
 
 /* COMPONENT STYLES */
 .input-box {
@@ -52,134 +40,3 @@
   @apply text-white bg-primary;
 }
 
-/* ------------------------- */
-/* Custom Scrollbar Styles   */
-/* ------------------------- */
-.scrollbar-thin {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(156 163 175) transparent;
-}
-
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgb(156 163 175);
-  border-radius: 3px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(107 114 128);
-}
-
-.scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
-  background-color: rgb(209 213 219);
-}
-
-.scrollbar-thumb-gray-600::-webkit-scrollbar-thumb {
-  background-color: rgb(75 85 99);
-}
-
-.dark .scrollbar-thin {
-  scrollbar-color: rgb(75 85 99) transparent;
-}
-
-.dark .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgb(75 85 99);
-}
-
-.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(107 114 128);
-}
-
-/* Hide scrollbar for mobile devices */
-@media (max-width: 768px) {
-  .mobile-hide-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .mobile-hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Ensure full height */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Mobile viewport fix */
-.h-screen {
-  height: 100vh;   /* Fallback */
-  height: 100dvh;  /* Modern browsers */
-}
-
-/* Responsive fix for very small devices */
-@media (max-width: 640px) {
-  .h-screen {
-    height: 100vh;
-    height: -webkit-fill-available;
-  }
-}
-
-/* Touch scroll improvements */
-@media (max-width: 1024px) {
-  .mobile-scroll-smooth {
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-}
-
-/* ------------------------- */
-/* Mobile Menu Animations    */
-/* ------------------------- */
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.slide-in-left {
-  animation: slideInLeft 0.3s ease-out forwards;
-}
-
-.slide-out-left {
-  animation: slideOutLeft 0.3s ease-in forwards;
-}
-
-/* Prevent body scroll when mobile menu is open */
-.mobile-menu-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}

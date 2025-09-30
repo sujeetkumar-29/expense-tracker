@@ -1,4 +1,3 @@
-// Updated AllTransaction.jsx with full mobile responsiveness
 import React, { useEffect, useState } from 'react'
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 import axiosInstance from '../../utils/axiosInstance'
